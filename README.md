@@ -1,15 +1,38 @@
-peapwn
+PEAPwn
 ======
 
-Proof-of-concept implementation of the Apple relay attack in Python. 
+PEAPwn is a proof-of-concept implementation of the Apple relay attack introduced at WiSec 2014. It uses a modified version of the ```wpa_supplicant``` tool by Jouni Malinen to establish a PEAP or EAP-TTLS session with the target Authentication Server, and a Python script to exploit several vulnerabilities in iOS < 8 and the MSCHAPv2 protocol. This allows an attacker to gain unauthorized access to any WPA2-Enterprise network that uses a tunneled authentication protocol such as PEAP or EAP-TTLS.
 
 
-Installation
-============
+Building the PoC
+================
 
-Currently, the PoC works only on Linux. The modified version of wpa_supplicant needs to be built prior to execution of the exploit. To do so, navigate to mods/hostap/wpa_supplicant and execute make. Finally, make sure that the Scapy library is installed as well.
+Currently, only Linux based operating systems are supported. To build the PoC, perform the following steps:
+
+1. Install the Scapy library for Python 2.
+2. Navigate to mods/hostap/wpa_supplicant.
+3. Run ```make```. 
 
 
-Running the exploit
-===================
+Running the PoC
+===============
 
+To run the PoC, one is required to have two NICs. At least one of these devices is required to support Monitor mode. The PoC can then be run as follows:
+
+```# python2 peapwn.py <infra_nic> <mon_nic> <essid>```
+
+For example, to attack a network with SSID ```testnet```:
+
+```# python2 peapwn.py wlan0 wlan1 testnet```
+
+
+Legal notice
+=============
+
+This PoC is intended for research purposes only, and should only be used in a legal context. For example, to verify the security of your own networks.
+
+
+TODO list
+=========
+
+- [ ] More robust error handling.
