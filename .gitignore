@@ -1,3 +1,5 @@
+peapwn.conf
+peapwn.sh
 *.o
 *.d
 *.gcno

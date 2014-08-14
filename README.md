@@ -5,17 +5,19 @@ PEAPwn is a proof-of-concept implementation of the Apple relay attack introduced
 
 
 Building the PoC
-================
+----------------
 
 Currently, only Linux based operating systems are supported. To build the PoC, perform the following steps:
 
 1. Install the Scapy library for Python 2.
-2. Navigate to mods/hostap/wpa_supplicant.
-3. Run ```make```. 
+2. Install libnl1
+3. Navigate to mods/hostap/wpa_supplicant.
+4. cp defconfig .config
+5. Run ```make```. 
 
 
 Running the PoC
-===============
+---------------
 
 To run the PoC, one is required to have two NICs. At least one of these devices is required to support Monitor mode. The PoC can then be run as follows:
 
@@ -27,12 +29,12 @@ For example, to attack a network with SSID ```testnet```:
 
 
 Legal notice
-=============
+------------
 
 This PoC is intended for research purposes only, and should only be used in a legal context. For example, to verify the security of your own networks.
 
 
 TODO list
-=========
+---------
 
 - [ ] More robust error handling.
