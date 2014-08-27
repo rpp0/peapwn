@@ -3,6 +3,8 @@ PEAPwn
 
 PEAPwn is a proof-of-concept implementation of the Apple relay attack introduced at WiSec 2014. It uses a modified version of the ```wpa_supplicant``` tool by Jouni Malinen to establish a PEAP or EAP-TTLS session with the target Authentication Server, and a Python script to exploit several vulnerabilities in iOS < 8 and the MSCHAPv2 protocol. This allows an attacker to gain unauthorized access to any WPA2-Enterprise network that uses a tunneled authentication protocol such as PEAP or EAP-TTLS.
 
+Link to the paper: http://research.edm.uhasselt.be/~bbonne/docs/robyns14wpa2enterprise.pdf
+
 
 Building the PoC
 ----------------
